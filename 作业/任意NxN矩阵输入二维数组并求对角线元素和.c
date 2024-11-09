@@ -28,32 +28,35 @@
 #define MAX 100 //矩阵n最大值
 
 
-int matrix[MAX][MAX];
+int GetMatrix(int matrix[MAX][MAX]);
+int DiagonalSum(int n, int matrix[MAX][MAX]);
 
 int main()
 {
-    int GetMatrix();    //输入NxN矩阵
-    int DiagonalSum();  //对角线元素求和
+    int matrix[MAX][MAX];
     int n;//矩阵行数
 
-    n = GetMatrix();
+    n = GetMatrix(matrix);
     printf("输入的%dx%d矩阵为:\n",n,n);
     for(int i=0;i<n;i++)
     {
         for(int j=0;j<n;j++)
         {   
-            printf("%d,",matrix[i][j]);
+            printf("%d ",matrix[i][j]);
         }
         printf("\n");
     }
-    int sum = DiagonalSum(n);
-    printf("对角线元素求和为:%d",sum);
+    int sum = DiagonalSum(n,matrix);
+    printf("对角线元素求和为:%d\n输入enter关闭......\n",sum);
+    n = getchar();
+
 }
 
-int GetMatrix()  //输入NxN矩阵
+int GetMatrix(int matrix[MAX][MAX])  //输入NxN矩阵
 {   
-    int n;
+    int n;//nxn矩阵
     char ch;
+    printf("请输入任意NxN矩阵，元素以空格分隔，回车换行\n输入:\n");
     for(int i=0;i<MAX;i++)
     {
         for(int j=0;j<MAX;j++)
@@ -64,14 +67,14 @@ int GetMatrix()  //输入NxN矩阵
             if(ch==('\n')){break;}
             // printf("%d\n",matrix[i][j]);
         }
-        if(i==n){break;}
+        if(i==(n-1)){break;}
         //printf("%dx%d\n",n,n);
     }
     // printf("%d\n",n);
     return n;
 }
 
-int DiagonalSum(int n)
+int DiagonalSum(int n,int matrix[MAX][MAX])
 {
     int sum=0;
     for(int i=0;i<n;i++)
