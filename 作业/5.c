@@ -8,7 +8,7 @@
 #define N 4
 
 void GetMatrix(int matrix[N][N]);
-int CalculateDiagonalSum(int matrix[N][N]);
+int Sum(int matrix[N][N]);
 
 int main()
 {
@@ -25,7 +25,7 @@ int main()
         printf("\n");
     }
 
-    int diagonalSum = CalculateDiagonalSum(matrix);
+    int diagonalSum = Sum(matrix);
     printf("对角线上的元素之和为: %d\n", diagonalSum);
 
     return 0;
@@ -43,7 +43,7 @@ void GetMatrix(int matrix[N][N])
     }
 }
 
-int CalculateDiagonalSum(int matrix[N][N])
+int Sum(int matrix[N][N])
 {
     int sum = 0;
     for(int i = 0; i < N; i++)
