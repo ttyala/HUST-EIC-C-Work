@@ -1,9 +1,9 @@
 /*
-5. ÇëÐ´³öcÓïÑÔ³ÌÐòÊµÏÖÒÔÏÂ¹¦ÄÜ£ºÊäÈënxn½×¾ØÕó£¬ÓÃº¯Êý
-±à³Ì¼ÆËã²¢Êä³ö¾ØÕóÁ½Ìõ¶Ô½ÇÏßÉÏµÄËùÓÐÔªËØÖ®ºÍ£¨ÒªÇóÊ¹ÓÃ
-Á½¸ö×Ô¶¨Òåº¯Êý·Ö±ðÊµÏÖ¾ØÕóÔªËØÖµÊäÈëºÍ¶Ô½ÇÏßÔªËØÇóºÍ¹¦ÄÜ£©¡£
+5. è¯·å†™å‡ºcè¯­è¨€ç¨‹åºå®žçŽ°ä»¥ä¸‹åŠŸèƒ½ï¼šè¾“å…¥nxné˜¶çŸ©é˜µï¼Œç”¨å‡½æ•°
+ç¼–ç¨‹è®¡ç®—å¹¶è¾“å‡ºçŸ©é˜µä¸¤æ¡å¯¹è§’çº¿ä¸Šçš„æ‰€æœ‰å…ƒç´ ä¹‹å’Œï¼ˆè¦æ±‚ä½¿ç”¨
+ä¸¤ä¸ªè‡ªå®šä¹‰å‡½æ•°åˆ†åˆ«å®žçŽ°çŸ©é˜µå…ƒç´ å€¼è¾“å…¥å’Œå¯¹è§’çº¿å…ƒç´ æ±‚å’ŒåŠŸèƒ½ï¼‰ã€‚
 */
-/*ÊäÈëÊä³öÊµÀý
+/*è¾“å…¥è¾“å‡ºå®žä¾‹
 5 5 5 5 5 6
 7 89 5 7 4 6
 0 6 4 7 6 89
@@ -11,31 +11,31 @@
 8 4 5 3 8 6
 7 5 4 87 6 9
 ----------------
-ÊäÈëµÄ6x6¾ØÕóÎª:
+è¾“å…¥çš„6x6çŸ©é˜µä¸º:
 5,5,5,5,5,6,
 7,89,5,7,4,6,
 0,6,4,7,6,89,
 6,3,4,8,6,5,
 8,4,5,3,8,6,
 7,5,4,87,6,9,
-¶Ô½ÇÏßÔªËØÇóºÍÎª:155
+å¯¹è§’çº¿å…ƒç´ æ±‚å’Œä¸º:155
 */
 
 
 #include <stdio.h>
-#define MAX 100 //¾ØÕón×î´óÖµ
+#define MAX 100 //çŸ©é˜µnæœ€å¤§å€¼
 
 
 int matrix[MAX][MAX];
 
 int main()
 {
-    int GetMatrix();    //ÊäÈëNxN¾ØÕó
-    int DiagonalSum();  //¶Ô½ÇÏßÔªËØÇóºÍ
-    int n;//¾ØÕóÐÐÊý
+    int GetMatrix();    //è¾“å…¥NxNçŸ©é˜µ
+    int DiagonalSum();  //å¯¹è§’çº¿å…ƒç´ æ±‚å’Œ
+    int n;//çŸ©é˜µè¡Œæ•°
 
     n = GetMatrix();
-    printf("ÊäÈëµÄ%dx%d¾ØÕóÎª:\n",n,n);
+    printf("è¾“å…¥çš„%dx%dçŸ©é˜µä¸º:\n",n,n);
     for(int i=0;i<n;i++)
     {
         for(int j=0;j<n;j++)
@@ -45,10 +45,10 @@ int main()
         printf("\n");
     }
     int sum = DiagonalSum(n);
-    printf("¶Ô½ÇÏßÔªËØÇóºÍÎª:%d",sum);
+    printf("å¯¹è§’çº¿å…ƒç´ æ±‚å’Œä¸º:%d",sum);
 }
 
-int GetMatrix()  //ÊäÈëNxN¾ØÕó
+int GetMatrix()  //è¾“å…¥NxNçŸ©é˜µ
 {   
     int n;
     char ch;
@@ -62,7 +62,7 @@ int GetMatrix()  //ÊäÈëNxN¾ØÕó
             if(ch==('\n')){break;}
             // printf("%d\n",matrix[i][j]);
         }
-        if(i==n){break;}
+        if(i==(n-1)){break;}
         //printf("%dx%d\n",n,n);
     }
     // printf("%d\n",n);
